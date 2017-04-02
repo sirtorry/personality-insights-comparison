@@ -60,4 +60,6 @@ r = requests.post(config.pi_url + '/v2/profile',
                   )
 
 print("Profile Request sent. Status code: %d, content-type: %s" % (r.status_code, r.headers['content-type']))
-print json.loads(r.text)
+f = open(handle,'w')
+f.write(r.text)
+f.close()
